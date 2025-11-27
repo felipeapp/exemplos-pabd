@@ -8,6 +8,16 @@
         },
         {
             "path": "Ex_02_JDBC_Intro"
+        },
+        {
+            "path": "Ex_03_JDBC_Injecao"
+        },
+        {
+            "path": "Ex_04_JDBC_Datas"
+        },
+        {
+            "path": "Ex_05_JDBC_Contato"
         }
-    ]
+    ],
+    "settings": {}
 }
