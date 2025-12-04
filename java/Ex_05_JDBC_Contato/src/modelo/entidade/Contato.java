@@ -3,6 +3,8 @@ package modelo.entidade;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+import visao.util.DateUtil;
+
 public class Contato {
 
     private int id;
@@ -58,6 +60,12 @@ public class Contato {
 
     public void setCadastro(LocalDateTime cadastro) {
         this.cadastro = cadastro;
+    }
+
+    @Override
+    public String toString() {
+        return id + ", " + nome + ", " + email + ", " + celular + ", " +
+                DateUtil.dateToString(nascimento) + ", " + DateUtil.dateToString(cadastro);
     }
 
 }

@@ -19,5 +19,10 @@
             "path": "Ex_05_JDBC_Contato"
         }
     ],
-    "settings": {}
+    "settings": {
+        "workbench.colorCustomizations": {
+            "titleBar.activeBackground": "#940505",
+            "titleBar.activeForeground": "#ffffff"
+        }
+    }
 }

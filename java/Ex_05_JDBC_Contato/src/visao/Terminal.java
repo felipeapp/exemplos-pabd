@@ -11,7 +11,7 @@ public class Terminal {
 
     public static void main(String[] args) {
 
-        Scanner leitor = new Scanner(System.in);
+        var leitor = new Scanner(System.in);
 
         while (true) {
             System.out.println("---------------------------------");
@@ -32,7 +32,7 @@ public class Terminal {
             }
 
             if (opcao == 1) {
-                Contato c = new Contato();
+                var c = new Contato();
 
                 System.out.print("Digite a data de nascimento (dd/mm/aaaa): ");
                 var nascimento = DateUtil.stringToDate(leitor.nextLine(), LocalDate.class);
@@ -51,16 +51,81 @@ public class Terminal {
                     System.out.print("Digite o celular: ");
                     c.setCelular(leitor.nextInt());
 
-                    try (ContatoDAO dao = new ContatoDAO()) {
-                        if (dao.salvar(c)) {
+                    try (var dao = new ContatoDAO()) {
+                        if (dao.salvar(c))
                             System.out.println("Contato salvo com sucesso!");
-                        } else {
+                        else
                             System.out.println("Erro ao salvar o contato!");
-                        }
+
                     }
                 }
             } else if (opcao == 2) {
+                try (var dao = new ContatoDAO()) {
+                    var contatos = dao.listar();
+
+                    if (contatos.isEmpty())
+                        System.out.println("Nenhum contato encontrado!");
+                    else
+                        contatos.forEach(System.out::println);
+                }
             } else if (opcao == 3) {
+                System.out.print("Digite o e-mail do contato a atualizar: ");
+                var email = leitor.nextLine();
+
+                try (var dao = new ContatoDAO()) {
+                    var contato = dao.buscarPorEmail(email);
+
+                    if (contato == null) {
+                        System.out.println("Contato não encontrado!");
+                    } else {
+                        System.out.println("Contato: " + contato);
+
+                        System.out.print("Digite o novo nome do contato: ");
+                        var novo_nome = leitor.nextLine();
+
+                        System.out.print("Digite o novo número do contato: ");
+                        var novo_numero = leitor.nextInt();
+
+                        if (dao.atualizarNomeNumeroPorEmail(email, novo_nome, novo_numero))
+                            System.out.println("Contato atualizado com sucesso!");
+                        else
+                            System.out.println("Erro ao atualizar o contato!");
+                    }
+                }
+            } else if (opcao == 4) {
+                System.out.print("Digite o e-mail do contato a remover: ");
+                var email = leitor.nextLine();
+
+                try (var dao = new ContatoDAO()) {
+                    if (dao.removerPorEmail(email))
+                        System.out.println("Contato removido com sucesso!");
+                    else
+                        System.out.println("Contato não encontrado!");
+                }
+            } else if (opcao == 5) {
+                System.out.print("Digite o e-mail do contato a buscar: ");
+                var email = leitor.nextLine();
+
+                try (var dao = new ContatoDAO()) {
+                    var contato = dao.buscarPorEmail(email);
+
+                    if (contato == null)
+                        System.out.println("Contato não encontrado!");
+                    else
+                        System.out.println(contato);
+                }
+            } else if (opcao == 6) {
+                System.out.print("Digite o nome ou parte do nome a buscar: ");
+                var nome = leitor.nextLine();
+
+                try (var dao = new ContatoDAO()) {
+                    var contatos = dao.buscarPorSimilaridadeNome(nome);
+
+                    if (contatos.isEmpty())
+                        System.out.println("Nenhum contato encontrado!");
+                    else
+                        contatos.forEach(System.out::println);
+                }
             } else {
                 System.out.println("Opção inválida, tente novamente!");
             }
