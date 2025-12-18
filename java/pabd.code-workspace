@@ -17,6 +17,9 @@
         },
         {
             "path": "Ex_05_JDBC_Contato"
+        },
+        {
+            "path": "Ex_06_JDBC_ORM"
         }
     ],
     "settings": {
