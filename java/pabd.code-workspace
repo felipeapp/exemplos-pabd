@@ -20,12 +20,17 @@
         },
         {
             "path": "Ex_06_JDBC_ORM"
+        },
+        {
+            "path": "Ex_07_JDBC_Gradle"
         }
     ],
     "settings": {
         "workbench.colorCustomizations": {
             "titleBar.activeBackground": "#940505",
             "titleBar.activeForeground": "#ffffff"
-        }
+        },
+        "java.compile.nullAnalysis.mode": "automatic",
+        "java.configuration.updateBuildConfiguration": "automatic"
     }
 }
