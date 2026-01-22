@@ -1,28 +1,28 @@
-drop database if exists controle_acesso;
-create database controle_acesso;
+drop database if exists acesso;
+create database acesso;
 
-use controle_acesso;
+use acesso;
 
 create table usuario (
-	id int primary key not null auto_increment,
+    id int primary key auto_increment not null,
     nome varchar(200) not null,
-    endereco varchar(500) not null,
-    cadastra datetime not null default now(),
-    index(nome)
+    cpf char(11) unique not null,
+    tag int unique not null
 );
 
 create table sala (
-	id int primary key not null auto_increment,
+    id int primary key auto_increment not null,
     numero int unique not null,
-    nome varchar(200) unique not null,
-    cadastra datetime not null default now()
+    nome varchar(200) unique not null
 );
 
 create table permissao (
-	id_usuario int not null,
+    id_usuario int not null,
     id_sala int not null,
-    horario datetime not null,
+    horario datetime not null default now(),
     primary key(id_usuario, id_sala),
-    foreign key(id_usuario) references usuario(id) on delete restrict on update cascade,
-	foreign key(id_sala) references sala(id) on delete restrict on update cascade
+    foreign key(id_usuario) references usuario(id)
+        on delete restrict on update cascade,
+    foreign key(id_sala) references sala(id)
+        on delete restrict on update cascade
 );
