@@ -13,8 +13,8 @@ import lombok.ToString;
 @AllArgsConstructor
 public class Sala {
 
-	private int id;
-	private int numero;
-	private String nome;
+    private int id;
+    private int numero;
+    private String nome;
 
 }

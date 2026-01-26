@@ -21,8 +21,6 @@ create table permissao (
     id_sala int not null,
     horario datetime not null default now(),
     primary key(id_usuario, id_sala),
-    foreign key(id_usuario) references usuario(id)
-        on delete restrict on update cascade,
-    foreign key(id_sala) references sala(id)
-        on delete restrict on update cascade
+    foreign key(id_usuario) references usuario(id) on delete restrict on update cascade,
+    foreign key(id_sala) references sala(id) on delete restrict on update cascade
 );

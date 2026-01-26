@@ -16,15 +16,15 @@ import pabd.visao.DateUtil;
 @AllArgsConstructor
 public class Permissao {
 
-	private Usuario usuario;
-	private Sala sala;
+    private Usuario usuario;
+    private Sala sala;
 
-	@ToString.Exclude
-	private LocalDateTime horario;
+    @ToString.Exclude
+    private LocalDateTime horario;
 
-	@ToString.Include(name = "horario")
-	private String getHorarioFormatado() {
-		return DateUtil.dateToString(this.horario);
-	}
+    @ToString.Include(name = "horario")
+    private String getHorarioFormatado() {
+        return DateUtil.dateToString(this.horario);
+    }
 
 }

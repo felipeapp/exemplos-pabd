@@ -13,9 +13,9 @@ import lombok.ToString;
 @AllArgsConstructor
 public class Usuario {
 
-	private int id;
-	private String nome;
-	private String cpf;
-	private int tag;
+    private int id;
+    private String nome;
+    private String cpf;
+    private int tag;
 
 }
