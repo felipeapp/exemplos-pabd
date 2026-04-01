@@ -5,8 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public static void main(String[] args) throws SQLException {
-    Connection conexao = DriverManager.getConnection(
-            "jdbc:mysql://127.0.0.1/agenda", "root", "123456");
+    Connection conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1/agenda", "root", "123456");
 
     PreparedStatement stmt = conexao.prepareStatement("select * from contato");
     ResultSet rs = stmt.executeQuery();

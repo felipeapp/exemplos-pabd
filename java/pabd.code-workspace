@@ -3,6 +3,9 @@
         {
             "path": "Ex_00_Slides",
         },
+        {
+            "path": "Ex_01_Revisao",
+        },
     ],
     "settings": {
         "java.project.sourcePaths": ["src"],
