@@ -1,6 +1,6 @@
-# Projeto de Banco de Dados
+# Programação com Acesso a Banco de Dados
 
-Exemplos da disciplina Projeto de Banco de Dados (2025.2) para o curso Técnico Integrado em Informática do Campus IFRN de São Gonçalo do Amarante.
+Exemplos da disciplina Programação com Acesso a Banco de Dados (2026.1) para o curso Técnico Integrado em Informática do Campus IFRN de São Gonçalo do Amarante.
 
 ## Acesso ao Servidor MySQL do LADIR
 
@@ -12,6 +12,7 @@ O servidor MySQL está disponível em uma VM na rede interna do campus. A ideia 
 - **Senha**: `sua matrícula+último nome em letras minúsculas`
 
 A senha padrão é formada pela `matrícula`, o sinal de `+` e o `último nome do usuário em letras minúsculas`, por exemplo, se o nome do usuário é `Maria João Pinto` e sua matrícula é `123456`, então sua senha padrão de acesso será `123456+pinto`. O usuário pode mudar sua senha quando fizer acesso remoto usando o comando:
+
 ```
 ALTER USER 'sua_matricula'@'%' IDENTIFIED BY 'nova_senha';
 ```
