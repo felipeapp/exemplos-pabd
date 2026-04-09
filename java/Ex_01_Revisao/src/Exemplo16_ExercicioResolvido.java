@@ -1,4 +1,5 @@
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Exemplo16_ExercicioResolvido {
@@ -48,33 +49,32 @@ public class Exemplo16_ExercicioResolvido {
 	}
 
 	public static void main(String[] args) {
-		var leitor = new Scanner(System.in);
+		try (Scanner leitor = new Scanner(System.in)) {
+			var n1 = lerNota(leitor, "Digite a primeira nota: ", "Primeira nota inválida!");
+			var n2 = lerNota(leitor, "Digite a segunda nota: ", "Segunda nota inválida!");
+			var n3 = lerNota(leitor, "Digite a terceira nota: ", "Terceira nota inválida!");
+			var n4 = lerNota(leitor, "Digite a quarta nota: ", "Quarta nota inválida!");
+			var nf = lerFaltas(leitor);
 
-		var n1 = lerNota(leitor, "Digite a primeira nota: ", "Primeira nota inválida!");
-		var n2 = lerNota(leitor, "Digite a segunda nota: ", "Segunda nota inválida!");
-		var n3 = lerNota(leitor, "Digite a terceira nota: ", "Terceira nota inválida!");
-		var n4 = lerNota(leitor, "Digite a quarta nota: ", "Quarta nota inválida!");
-		var nf = lerFaltas(leitor);
+			var media = (2 * n1 + 2 * n2 + 3 * n3 + 3 * n4) / 10;
 
-		var media = (2 * n1 + 2 * n2 + 3 * n3 + 3 * n4) / 10;
+			System.out.println("O número de faltas é " + nf);
+			System.out.println("A média do aluno é " + media);
 
-		System.out.println("O número de faltas é " + nf);
-		System.out.println("A média do aluno é " + media);
-
-		if (nf > 20) {
-			System.out.println("Reprovado por faltas");
-		} else if (media >= 9) {
-			System.out.println("Aprovado com louvor");
-		} else if (media >= 7) {
-			System.out.println("Aprovado");
-		} else if (media >= 3) {
-			System.out.println("Recuperação");
-		} else {
-			System.out.println("Reprovado");
+			if (nf > 20) {
+				System.out.println("Reprovado por faltas");
+			} else if (media >= 9) {
+				System.out.println("Aprovado com louvor");
+			} else if (media >= 7) {
+				System.out.println("Aprovado");
+			} else if (media >= 3) {
+				System.out.println("Recuperação");
+			} else {
+				System.out.println("Reprovado");
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("\nExecução interrompida pelo usuário!");
 		}
-
-		leitor.close();
-
 	}
 
 }
