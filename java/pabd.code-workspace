@@ -6,6 +6,9 @@
         {
             "path": "Ex_01_Revisao",
         },
+        {
+            "path": "Ex_02_JDBC_Intro",
+        },
     ],
     "settings": {
         "java.project.sourcePaths": ["src"],
