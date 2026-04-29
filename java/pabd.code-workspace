@@ -9,10 +9,14 @@
         {
             "path": "Ex_02_JDBC_Intro",
         },
+        {
+            "path": "Ex_03_Gradle",
+        },
     ],
     "settings": {
         "java.project.sourcePaths": ["src"],
         "java.project.outputPath": "bin",
         "java.project.referencedLibraries": ["lib/**/*.jar"],
+        "java.configuration.updateBuildConfiguration": "automatic",
     },
 }
