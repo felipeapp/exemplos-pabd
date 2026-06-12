@@ -15,6 +15,12 @@
         {
             "path": "Ex_04_JDBC_Injecao",
         },
+        {
+            "path": "Ex_05_JDBC_Datas",
+        },
+        {
+            "path": "Ex_06_JDBC_Contato",
+        },
     ],
     "settings": {
         "java.project.sourcePaths": ["src"],
