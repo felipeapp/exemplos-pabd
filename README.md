@@ -12,6 +12,7 @@ Servidor temporário:
 - **Usuário**: `root`
 - **Senha**: `123456`
 
+Servidor principal (offline por enquanto):
 - **Endereço**: `10.225.0.4`
 - **Porta**: `3306`
 - **Usuário**: `sua matrícula`
