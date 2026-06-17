@@ -6,6 +6,12 @@ Exemplos da disciplina Programação com Acesso a Banco de Dados (2026.1) para o
 
 O servidor MySQL está disponível em uma VM na rede interna do campus. A ideia é que cada aluno e professor possa usar essa instância de forma remota, evitando instalar um servidor MySQL em cada máquina dos laboratórios. Use os dados abaixo para acesso.
 
+Servidor temporário:
+- **Endereço**: `10.230.0.44`
+- **Porta**: `3306`
+- **Usuário**: `root`
+- **Senha**: `123456`
+
 - **Endereço**: `10.225.0.4`
 - **Porta**: `3306`
 - **Usuário**: `sua matrícula`
