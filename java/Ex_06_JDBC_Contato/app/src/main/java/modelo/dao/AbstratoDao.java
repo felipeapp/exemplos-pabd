@@ -4,14 +4,17 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public abstract class AbstradoDao implements AutoCloseable {
+public abstract class AbstratoDao implements AutoCloseable {
+
+    private final String url = "jdbc:mysql://10.230.0.44/1812384_agenda";
+    private final String usuario = "root";
+    private final String senha = "123456";
 
     protected Connection conexao;
 
-    public AbstradoDao() {
+    public AbstratoDao() {
         try {
-            conexao = DriverManager.getConnection(
-                    "jdbc:mysql://10.230.0.44/1812384_agenda", "root", "123456");
+            conexao = DriverManager.getConnection(url, usuario, senha);
         } catch (SQLException e) {
             e.printStackTrace();
         }
