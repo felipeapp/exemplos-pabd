@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public abstract class AbstratoDao implements AutoCloseable {
 
-    private final String url = "jdbc:mysql://10.230.0.44/1812384_agenda";
+    private final String url = "jdbc:mysql://127.0.0.1/agenda";
     private final String usuario = "root";
     private final String senha = "123456";
 
