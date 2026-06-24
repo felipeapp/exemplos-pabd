@@ -7,8 +7,6 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.mysql:mysql-connector-j:9.7.0'
-
     compileOnly 'org.projectlombok:lombok:1.18.46'
     annotationProcessor 'org.projectlombok:lombok:1.18.46'
 }

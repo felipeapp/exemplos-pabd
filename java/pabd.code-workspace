@@ -21,6 +21,10 @@
         {
             "path": "Ex_06_JDBC_Contato",
         },
+        {
+            "name": "Ex_07_JDBC_ORM",
+            "path": "Ex_07_JDBC_ORM",
+        },
     ],
     "settings": {
         "java.project.sourcePaths": ["src"],
