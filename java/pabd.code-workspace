@@ -25,6 +25,10 @@
             "name": "Ex_07_JDBC_ORM",
             "path": "Ex_07_JDBC_ORM",
         },
+        {
+            "name": "Ex_08_JDBC_Acesso",
+            "path": "Ex_08_JDBC_Acesso",
+        },
     ],
     "settings": {
         "java.project.sourcePaths": ["src"],
