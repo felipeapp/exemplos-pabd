@@ -56,8 +56,6 @@ Uma academia deseja controlar as matrículas dos alunos em suas modalidades (mus
 - Abylene Freitas de França
 - Ana Karolline Carneiro Souza
 - Hadassa Ludmylla da Silva Beserra
-- João Ricardo Dantas Mendes
-- Kellyane Pereira Da Silva
 
 ### Problema
 
@@ -226,3 +224,34 @@ Uma empresa organizadora de eventos deseja informatizar o controle de inscriçõ
 - Eventos em que um participante está inscrito
 - Quantidade de inscritos por evento
 - Eventos com maior número de inscritos
+
+## Grupo 7
+
+### Membros
+
+- João Ricardo Dantas Mendes
+- Kellyane Pereira Da Silva
+
+### Problema
+
+Uma escola deseja informatizar o processo de oferta de disciplinas para seus alunos.
+
+### Tabelas
+
+- Aluno
+- Disciplina
+- Matrícula
+
+### Funcionalidades
+
+- Cadastrar alunos;
+- Cadastrar disciplinas;
+- Registrar matrículas;
+- Cancelar matrículas.
+
+### Relatórios
+
+- Alunos matriculados em uma disciplina;
+- Disciplinas em que um aluno está matriculado;
+- Quantidade de alunos por disciplina;
+- Disciplinas com maior número de alunos matriculados.
