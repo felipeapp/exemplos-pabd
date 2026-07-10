@@ -25,27 +25,9 @@ Use o exemplo deste repositório (`Ex_08_JDBC_Acesso`) como base para o projeto.
 
 ### Problema
 
-Uma academia deseja controlar as matrículas dos alunos em suas modalidades (musculação, pilates, natação, zumba, hidroginástica, etc).
+Login do Sistema de Gerenciamento do Núcleo de Arte (SINART).
 
-### Tabelas
-
-- Aluno
-- Modalidade
-- Matrícula
-
-### Funcionalidades
-
-- Cadastrar alunos
-- Cadastrar modalidades
-- Matricular alunos
-- Cancelar matrículas
-
-### Relatórios
-
-- Alunos por modalidade
-- Modalidades de um aluno
-- Quantidade de alunos por modalidade
-- Modalidades sem alunos matriculados
+**Precisa de mais detalhes**
 
 ---
 
@@ -255,3 +237,38 @@ Uma escola deseja informatizar o processo de oferta de disciplinas para seus alu
 - Disciplinas em que um aluno está matriculado;
 - Quantidade de alunos por disciplina;
 - Disciplinas com maior número de alunos matriculados.
+
+## Grupo 8
+
+### Membros
+
+- Renato Costa
+- Artur Luis
+- Igor Luis
+- Guilherme Paulo
+- Arthur Guilherme
+- Pedro Jerônimo
+
+### Problema
+
+Uma academia deseja controlar as matrículas dos alunos em suas modalidades (musculação, pilates, natação, zumba, hidroginástica, etc).
+
+### Tabelas
+
+- Aluno
+- Modalidade
+- Matrícula
+
+### Funcionalidades
+
+- Cadastrar alunos
+- Cadastrar modalidades
+- Matricular alunos
+- Cancelar matrículas
+
+### Relatórios
+
+- Alunos por modalidade
+- Modalidades de um aluno
+- Quantidade de alunos por modalidade
+- Modalidades sem alunos matriculados
