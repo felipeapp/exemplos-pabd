@@ -23,48 +23,47 @@ public class Terminal {
         System.out.print("Escolha sua opção: ");
     }
 
-    public static void executar() {
-        var leitor = new Scanner(System.in);
+    public static void iniciar() {
+        try (Scanner leitor = new Scanner(System.in)) {
+            while (true) {
+                mostrarMenu();
+                int opcao = leitor.nextInt();
+                leitor.nextLine();
 
-        while (true) {
-            mostrarMenu();
-            var opcao = leitor.nextInt();
-            leitor.nextLine();
-
-            if (opcao == 0) {
-                System.out.println("Saindo do programa...");
-                break;
-            } else if (opcao == 1) {
-                UsuarioTerminal.lerDadosAdicionar(leitor);
-            } else if (opcao == 2) {
-                SalaTerminal.lerDadosAdicionar(leitor);
-            } else if (opcao == 3) {
-                PermissaoTerminal.lerDadosAdicionarSemVerificacao(leitor);
-            } else if (opcao == 4) {
-                PermissaoTerminal.lerDadosAdicionarComVerificacao(leitor);
-            } else if (opcao == 5) {
-                UsuarioTerminal.lerDadosBuscarPorCpf(leitor);
-            } else if (opcao == 6) {
-                SalaTerminal.lerDadosBuscarPorNumero(leitor);
-            } else if (opcao == 7) {
-                PermissaoTerminal.lerDadosListarSalas(leitor);
-            } else if (opcao == 8) {
-                System.out.println("[08] Buscar usuários da sala");
-            } else if (opcao == 9) {
-                System.out.println("[09] Remover permissão (sem verificação)");
-            } else if (opcao == 10) {
-                System.out.println("[10] Remover permissão (com verificação)");
-            } else if (opcao == 11) {
-                System.out.println("[11] Gerar relatório de usuários");
-            } else if (opcao == 12) {
-                System.out.println("[12] Gerar relatório de salas");
-            } else if (opcao == 13) {
-                System.out.println("[13] Gerar relatório de permissões");
-            } else {
-                System.out.println("Opção inválida, tente novamente!");
+                if (opcao == 0) {
+                    System.out.println("Saindo do programa...");
+                    break;
+                } else if (opcao == 1) {
+                    UsuarioUtil.lerDadosAdicionar(leitor);
+                } else if (opcao == 2) {
+                    SalaUtil.lerDadosAdicionar(leitor);
+                } else if (opcao == 3) {
+                    PermissaoUtil.lerDadosAdicionarSemVerificacao(leitor);
+                } else if (opcao == 4) {
+                    PermissaoUtil.lerDadosAdicionarComVerificacao(leitor);
+                } else if (opcao == 5) {
+                    UsuarioUtil.lerDadosBuscarPorCpf(leitor);
+                } else if (opcao == 6) {
+                    SalaUtil.lerDadosBuscarPorNumero(leitor);
+                } else if (opcao == 7) {
+                    SalaUtil.lerDadosBuscarPorUsuario(leitor);
+                } else if (opcao == 8) {
+                    UsuarioUtil.lerDadosBuscarPorSala(leitor);
+                } else if (opcao == 9) {
+                    PermissaoUtil.lerDadosRemoverSemVerificacao(leitor);
+                } else if (opcao == 10) {
+                    PermissaoUtil.lerDadosRemoverComVerificacao(leitor);
+                } else if (opcao == 11) {
+                    UsuarioUtil.gerarRelatorio();
+                } else if (opcao == 12) {
+                    SalaUtil.gerarRelatorio();
+                } else if (opcao == 13) {
+                    PermissaoUtil.gerarRelatorio();
+                } else {
+                    System.out.println("Opção inválida, tente novamente!");
+                }
             }
         }
-
-        leitor.close();
     }
+
 }

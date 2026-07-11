@@ -8,9 +8,9 @@ public class ConexaoSingleton {
 
     private static Connection conexao;
 
-    private static final String URL = "jdbc:mysql://10.225.0.4/1812384_acesso";
-    private static final String USUARIO = "1812384";
-    private static final String SENHA = "alves@123";
+    private static final String URL = "jdbc:mysql://127.0.0.1/acesso";
+    private static final String USUARIO = "root";
+    private static final String SENHA = "123456";
 
     private ConexaoSingleton() {
     }

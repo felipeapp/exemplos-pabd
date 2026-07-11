@@ -2,10 +2,12 @@ package acesso.visao.terminal;
 
 import java.util.Scanner;
 
+import acesso.modelo.dao.SalaDao;
 import acesso.modelo.dao.UsuarioDao;
+import acesso.modelo.entidade.Sala;
 import acesso.modelo.entidade.Usuario;
 
-public class UsuarioTerminal {
+public class UsuarioUtil {
 
     public static void lerDadosAdicionar(Scanner leitor) {
         Usuario u = new Usuario();
@@ -38,6 +40,41 @@ public class UsuarioTerminal {
             System.out.println("Usuário não encontrado!");
         } else {
             System.out.println(usuario);
+        }
+    }
+
+    public static void lerDadosBuscarPorSala(Scanner leitor) {
+        UsuarioDao usuarioDao = new UsuarioDao();
+        SalaDao salaDao = new SalaDao();
+
+        System.out.print("Digite o número da sala para buscar seus usuários: ");
+        var numero = leitor.nextInt();
+
+        Sala s = salaDao.buscarPorNumero(numero);
+        if (s == null) {
+            System.out.println("Sala não encontrada!");
+            return;
+        }
+        System.out.println("Usuários da sala " + s + ":");
+
+        var usuarios = usuarioDao.buscarPorSala(numero);
+
+        if (usuarios.isEmpty()) {
+            System.out.println("Nenhum usuário encontrado!");
+        } else {
+            usuarios.forEach(System.out::println);
+        }
+
+    }
+
+    public static void gerarRelatorio() {
+        UsuarioDao dao = new UsuarioDao();
+        var usuarios = dao.listar();
+
+        if (usuarios.isEmpty()) {
+            System.out.println("Nenhum usuário cadastrado!");
+        } else {
+            usuarios.forEach(System.out::println);
         }
     }
 

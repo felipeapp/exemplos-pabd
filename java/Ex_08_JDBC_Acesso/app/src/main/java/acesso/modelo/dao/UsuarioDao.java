@@ -1,14 +1,25 @@
 package acesso.modelo.dao;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import acesso.modelo.entidade.Usuario;
 import acesso.modelo.util.AbstratoDao;
 
 public class UsuarioDao extends AbstratoDao {
 
+    public static Usuario criarUsuario(ResultSet rs, boolean prefixo) throws SQLException {
+        if (prefixo) {
+            return new Usuario(rs.getInt("u.id"), rs.getString("u.nome"), rs.getString("u.cpf"), rs.getInt("u.tag"));
+        } else {
+            return new Usuario(rs.getInt("id"), rs.getString("nome"), rs.getString("cpf"), rs.getInt("tag"));
+        }
+    }
+
     public boolean adicionar(Usuario u) {
-        boolean resultado;
+        boolean sucesso;
         String sql = "insert into usuario (nome, cpf, tag) values (?, ?, ?)";
 
         try (var stmt = conexao.prepareStatement(sql)) {
@@ -16,16 +27,16 @@ public class UsuarioDao extends AbstratoDao {
             stmt.setString(2, u.getCpf());
             stmt.setInt(3, u.getTag());
 
-            resultado = stmt.executeUpdate() == 1;
+            sucesso = stmt.executeUpdate() == 1;
         } catch (SQLException e) {
-            resultado = false;
+            sucesso = false;
         }
 
-        return resultado;
+        return sucesso;
     }
 
     public Usuario buscarPorCpf(String cpf) {
-        Usuario usuario = null;
+        Usuario u = null;
         String sql = "select * from usuario where cpf = ?";
 
         try (var stmt = conexao.prepareStatement(sql)) {
@@ -33,18 +44,53 @@ public class UsuarioDao extends AbstratoDao {
 
             try (var rs = stmt.executeQuery()) {
                 if (rs.next()) {
-                    usuario = new Usuario();
-                    usuario.setId(rs.getInt("id"));
-                    usuario.setNome(rs.getString("nome"));
-                    usuario.setCpf(rs.getString("cpf"));
-                    usuario.setTag(rs.getInt("tag"));
+                    u = criarUsuario(rs, false);
                 }
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
 
-        return usuario;
+        return u;
+    }
+
+    public List<Usuario> buscarPorSala(int numero) {
+        List<Usuario> usuarios = new ArrayList<>();
+        String sql = """
+                    select u.* from
+                    sala s inner join permissao p on s.id = p.id_sala
+                    inner join usuario u on u.id = p.id_usuario
+                    where s.numero = ?
+                """;
+
+        try (var stmt = conexao.prepareStatement(sql)) {
+            stmt.setInt(1, numero);
+
+            try (var rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    usuarios.add(criarUsuario(rs, false));
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return usuarios;
+    }
+
+    public List<Usuario> listar() {
+        List<Usuario> usuarios = new ArrayList<>();
+        String sql = "select * from usuario";
+
+        try (var stmt = conexao.prepareStatement(sql); var rs = stmt.executeQuery()) {
+            while (rs.next()) {
+                usuarios.add(criarUsuario(rs, false));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return usuarios;
     }
 
 }
