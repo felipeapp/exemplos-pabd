@@ -25,9 +25,27 @@ Use o exemplo deste repositório (`Ex_08_JDBC_Acesso`) como base para o projeto.
 
 ### Problema
 
-Login do Sistema de Gerenciamento do Núcleo de Arte (SINART).
+É necessário realizar a gestão de reservas entre usuários e salas de uma instituição de ensino.
 
-**Precisa de mais detalhes**
+### Tabelas
+
+- Usuário
+- Sala
+- Reserva
+
+### Funcionalidades Básicas
+
+- Cadastrar usuários
+- Cadastrar salas
+- Resgistrar reserva
+- Remover reserva
+
+### Relatórios Emitidos pelo Sistema
+
+- Usuários cadastrados
+- Salas disponíveis
+- Reservas feitas
+- Reservas por usuário
 
 ---
 
@@ -49,14 +67,14 @@ Uma locadora de veículos deseja controlar os aluguéis realizados para seus cli
 - Veículo
 - Locação
 
-### Funcionalidades
+### Funcionalidades Básicas
 
 - Cadastrar clientes
 - Cadastrar veículos
 - Registrar locações
 - Registrar devoluções
 
-### Relatórios
+### Relatórios Emitidos pelo Sistema
 
 - Veículos disponíveis
 - Veículos alugados
@@ -72,6 +90,8 @@ Uma locadora de veículos deseja controlar os aluguéis realizados para seus cli
 - Rodrigo Medeiros
 - Kauany Victoria
 - Manuele Pietra
+- Antonio Phillipe
+- Kaiser
 
 ### Problema
 
@@ -83,14 +103,14 @@ Uma clínica médica deseja informatizar o processo de agendamento de consultas.
 - Paciente
 - Consulta
 
-### Funcionalidades
+### Funcionalidades Básicas
 
 - Cadastrar médicos
 - Cadastrar pacientes
 - Agendar consultas
 - Cancelar consultas
 
-### Relatórios
+### Relatórios Emitidos pelo Sistema
 
 - Consultas de um médico
 - Consultas de um paciente
@@ -120,14 +140,14 @@ A biblioteca de uma escola deseja informatizar o controle de empréstimos de liv
 - Aluno
 - Empréstimo
 
-### Funcionalidades
+### Funcionalidades Básicas
 
 - Cadastrar livros
 - Cadastrar alunos
 - Registrar empréstimos
 - Registrar devoluções
 
-### Relatórios
+### Relatórios Emitidos pelo Sistema
 
 - Livros emprestados
 - Livros disponíveis
@@ -157,14 +177,14 @@ Um pequeno hotel deseja informatizar o gerenciamento de reservas de quartos.
 - Quarto
 - Reserva
 
-### Funcionalidades
+### Funcionalidades Básicas
 
 - Cadastrar hóspedes
 - Cadastrar quartos
 - Registrar reservas
 - Cancelar reservas
 
-### Relatórios
+### Relatórios Emitidos pelo Sistema
 
 - Quartos disponíveis
 - Reservas de um hóspede
@@ -193,14 +213,14 @@ Uma empresa organizadora de eventos deseja informatizar o controle de inscriçõ
 - Evento
 - Inscrição
 
-### Funcionalidades
+### Funcionalidades Básicas
 
 - Cadastrar participantes
 - Cadastrar eventos
 - Registrar inscrições
 - Cancelar inscrições
 
-### Relatórios
+### Relatórios Emitidos pelo Sistema
 
 - Participantes inscritos em um evento
 - Eventos em que um participante está inscrito
@@ -224,14 +244,14 @@ Uma escola deseja informatizar o processo de oferta de disciplinas para seus alu
 - Disciplina
 - Matrícula
 
-### Funcionalidades
+### Funcionalidades Básicas
 
 - Cadastrar alunos;
 - Cadastrar disciplinas;
 - Registrar matrículas;
 - Cancelar matrículas.
 
-### Relatórios
+### Relatórios Emitidos pelo Sistema
 
 - Alunos matriculados em uma disciplina;
 - Disciplinas em que um aluno está matriculado;
@@ -259,16 +279,55 @@ Uma academia deseja controlar as matrículas dos alunos em suas modalidades (mus
 - Modalidade
 - Matrícula
 
-### Funcionalidades
+### Funcionalidades Básicas
 
 - Cadastrar alunos
 - Cadastrar modalidades
 - Matricular alunos
 - Cancelar matrículas
 
-### Relatórios
+### Relatórios Emitidos pelo Sistema
 
 - Alunos por modalidade
 - Modalidades de um aluno
 - Quantidade de alunos por modalidade
 - Modalidades sem alunos matriculados
+
+---
+
+## Grupo 9
+
+### Membros
+
+- Hadassa Ludmylla
+
+### Problema
+
+Uma escola deseja informatizar o agendamento de atividades avaliativas e acompanhamento por status (Agendado, Finalizado, Cancelado).
+
+### Tabela
+
+- Atividade Avaliativa
+
+### Campos sugeridos
+
+- `id`
+- `titulo`
+- `descricao`
+- `nome_disciplina`
+- `nome_turma`
+- `data_realizacao`
+- `status`
+
+### Funcionalidades Básicas
+
+- Cadastrar atividades avaliativas
+- Consultar atividade por `id`
+- Alterar status de uma atividade por `id`
+- Excluir uma atividade por `id`
+
+### Relatórios Emitidos pelo Sistema
+
+- Listar todas as atividades cadastradas
+- Listar atividades por status
+- Listar atividades de um determinado dia
